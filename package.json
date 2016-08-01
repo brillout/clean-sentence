@@ -1,0 +1,13 @@
+{
+  "name": "clean-sentence",
+  "version": "0.1.0",
+  "description": "Clean a sentence from missing first letter upper case, trailing dot and/or remove URLs, emojis, white space doublets.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brillout/clean-sentence.git"
+  },
+  "dependencies": {
+    "emoji-regex": "^6.0.0"
+  }
+}
