@@ -1,6 +1,6 @@
 {
   "name": "clean-sentence",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Clean a sentence from missing first letter upper case, trailing dot and/or remove URLs, emojis, white space doublets.",
   "main": "index.js",
   "repository": {
