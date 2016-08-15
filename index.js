@@ -1,6 +1,5 @@
 var emojiRegex = require('emoji-regex');
 
-
 module.exports = function (sentence, options) {
     if( !options ) {
         options = {};
@@ -12,8 +11,8 @@ module.exports = function (sentence, options) {
     if( options.remove_urls ) {
         sentence = remove_urls(sentence);
     }
-    if( ! options.do_not_remove_leading_spaces ) {
-        sentence = remove_leading_spaces(sentence);
+    if( ! options.do_not_remove_leading_non_latin_chars ) {
+        sentence = remove_leading_non_latin_chars(sentence);
     }
     if( ! options.do_not_remove_trailing_spaces ) {
         sentence = remove_trailing_spaces(sentence);
@@ -48,8 +47,8 @@ function remove_emojis(str) {
     return str;
 }
 
-function remove_leading_spaces(str) {
-    str = str.replace(/^[\s]+/,'');
+function remove_leading_non_latin_chars(str) {
+    str = str.replace(/^[^a-zA-Z]+/,'');
     return str;
 }
 
