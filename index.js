@@ -54,7 +54,6 @@ function remove_unexpected_leading_chars(str) {
 
 function remove_trailing_spaces(str) {
     str = str.replace(/^[\s]+/,'');
-    str = str.replace(/^[\s]+/,'');
     return str;
 }
 
@@ -64,9 +63,12 @@ function remove_space_duplicates(str) {
 }
 
 function add_trailing_dot(str) {
-    str = str.replace(/\s+$/,'');
-    if( str.slice(-1) !== '.' ) {
-        str = str+'.';
+    var str_ = str.replace(/\s+$/,'');
+    if( str_.length === 0) {
+        return str;
     }
-    return str;
+    if( str_.slice(-1) !== '.' ) {
+        str_ = str_+'.';
+    }
+    return str_;
 }
