@@ -67,6 +67,8 @@ function add_trailing_dot(str) {
     if( str_.length === 0) {
         return str;
     }
+ // str_ = str_.replace(/[^a-z0-9\)\+\-]+$/i, '');
+    str_ = str_.replace(/[\!\:\,\;\(]+$/i, '');
     if( str_.slice(-1) !== '.' ) {
         str_ = str_+'.';
     }
