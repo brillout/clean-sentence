@@ -2,7 +2,6 @@
 Running
 ```
 // example.js
-var assert = require('assert');
 var cleanSentence = require('clean-sentence');
 
 console.log(
