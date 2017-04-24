@@ -1,4 +1,5 @@
 var emojiRegex = require('emoji-regex');
+var emojiRegex_text = require('emoji-regex/text');
 
 module.exports = function (sentence, options) {
     if( !options ) {
@@ -44,6 +45,7 @@ function uppercase_first_letter(str) {
 function remove_emojis(str) {
     str = str.replace(/\:[a-zA-Z0-9\-_]+\:/g,'');
     str = str.replace(emojiRegex(), '');
+    str = str.replace(emojiRegex_text(), '');
     return str;
 }
 
