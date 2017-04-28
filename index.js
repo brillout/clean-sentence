@@ -9,6 +9,9 @@ module.exports = function (sentence, options) {
     if( options.remove_emojis ) {
         sentence = remove_emojis(sentence);
     }
+    if( options.remove_text_emojis ) {
+        sentence = remove_text_emojis(sentence);
+    }
     if( options.remove_urls ) {
         sentence = remove_urls(sentence);
     }
@@ -45,6 +48,11 @@ function uppercase_first_letter(str) {
 function remove_emojis(str) {
     str = str.replace(/\:[a-zA-Z0-9\-_]+\:/g,'');
     str = str.replace(emojiRegex(), '');
+    str = str.replace(emojiRegex_text(), '');
+    return str;
+}
+
+function remove_text_emojis(str) {
     str = str.replace(emojiRegex_text(), '');
     return str;
 }
